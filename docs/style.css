@@ -127,6 +127,9 @@ body {
     background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease; /* Анимация смены темы */
 }
 
 a {
@@ -135,4 +138,31 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+
+:root {
+    --bg-color: #fff; /* Цвет фона для дневной темы */
+    --text-color: #000; /* Цвет текста для дневной темы */
+    --toggle-bg: #000;
+}
+
+body.dark {
+    --bg-color: #121212; /* Цвет фона для ночной темы */
+    --text-color: #fff; /* Цвет текста для ночной темы */
+    --toggle-bg: #fff;
+}
+
+.theme-toggle {
+    background-color: var(--toggle-bg);
+    border: none;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
 }
