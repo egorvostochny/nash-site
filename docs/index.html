@@ -8,18 +8,24 @@
 </head>
 <body>
 <header>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+</header>
+
+<!-- Боковое меню -->
+<div id="side-menu" class="side-menu">
     <nav>
         <ul>
-            <h1>Добро пожаловать на мой сайт!</h1>
             <li><a href="#about">О компании</a></li>
             <li><a href="#services">Услуги</a></li>
             <li><a href="#contacts">Контакты</a></li>
             <li><a href="#projects">Проекты</a></li>
         </ul>
     </nav>
-    <!-- Кнопка переключения темы -->
-    <button id="theme-toggle" class="theme-toggle">🌙</button>
-</header>
+</div>
+
+<!-- Затемняющий фон -->
+<div id="overlay" class="overlay"></div>
     <section id="about">
         <h2>Обо мне</h2>
         <p>Я — разработчик чат-ботов и верстальщик веб-сайтов. Моя цель — создавать удобные и функциональные решения.</p>
