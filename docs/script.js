@@ -1,55 +1,34 @@
-console.log("Добро пожаловать на мой сайт!");
-// Получаем элементы
-const contactBtn = document.getElementById('contact-btn');
-const modal = document.getElementById('contact-modal');
-const closeBtn = document.querySelector('.close');
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sideMenu = document.querySelector('.side-menu');
+    const overlay = document.querySelector('.overlay');
+    const searchToggle = document.getElementById('search-toggle');
+    const searchForm = document.getElementById('search-form');
 
-// Открытие модального окна при клике на кнопку
-contactBtn.addEventListener('click', () => {
-    modal.style.display = 'flex';
-});
-
-// Закрытие модального окна при клике на "крестик"
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-// Закрытие модального окна при клике вне его
-window.addEventListener('click', (e) => {
-    if (e.target == modal) {
-        modal.style.display = 'none';
-    }
-});
-
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+    // Открытие бокового меню
+    menuToggle.addEventListener('click', function() {
+        sideMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
     });
-});
 
-// Переключение темы
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+    // Закрытие бокового меню при клике на затемнение
+    overlay.addEventListener('click', function() {
+        sideMenu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
 
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    themeToggle.textContent = body.classList.contains('dark') ? '🌞' : '🌙';
-});
+    // Поиск
+    searchToggle.addEventListener('click', function() {
+        searchForm.style.display = searchForm.style.display === 'block' ? 'none' : 'block';
+        if (searchForm.style.display === 'block') {
+            document.getElementById('search-input').focus();
+        }
+    });
 
-// Открытие/закрытие меню
-const menuToggle = document.getElementById('menu-toggle');
-const sideMenu = document.getElementById('side-menu');
-const overlay = document.getElementById('overlay');
-
-menuToggle.addEventListener('click', () => {
-    sideMenu.classList.add('active');
-    overlay.classList.add('active');
-});
-
-overlay.addEventListener('click', () => {
-    sideMenu.classList.remove('active');
-    overlay.classList.remove('active');
+    // Логика обработки поиска
+    document.getElementById('search-submit').addEventListener('click', function() {
+        const query = document.getElementById('search-input').value;
+        alert(`Поиск по запросу: ${query}`);
+        // Здесь можно добавить функциональность поиска по сайту
+    });
 });

@@ -1,206 +1,160 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+/* Адаптация контента */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Хэдэр */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: var(--bg-color);
-    position: relative;
-    z-index: 3;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    color: #828282;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    header {
-        text-align: center;
-    }
-
-    nav ul {
-        display: block;
-        text-align: center;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 10px;
-    }
-
-    footer {
-        font-size: 14px;
-    }
-}
-
-.modal {
-    display: none;
-    position: fixed;
+    padding: 15px 20px;
+    background-color: #1c1c1e;
+    position: sticky;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    text-align: center;
+.logo a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: white; /* Цвет текста */
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
 }
 
-.close {
-    color: red;
-    cursor: pointer;
-    float: right;
-    font-size: 20px;
-}
-
-.project-container {
+.header-buttons {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 10px;
 }
 
-.project {
-    width: 45%;
-    margin: 10px;
-}
-
-.project img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.project p {
-    text-align: center;
-    margin-top: 5px;
-}
-
-#services {
-    background-color: #333333;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-#services ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#services li {
-    padding: 5px 0;
-}
-
-body {
-    transition: background-color 0.3s ease, color 0.3s ease; /* Анимация смены темы */
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-a {
-    color: #007aff:
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: none;
-}
-
-:root {
-    --bg-color: #fff; /* Цвет фона для дневной темы */
-    --text-color: #000; /* Цвет текста для дневной темы */
-}
-
-body.dark {
-    --bg-color: #333333; /* Цвет фона для ночной темы */
-    --text-color: #fff; /* Цвет текста для ночной темы */
-}
-
-.theme-toggle, .menu-toggle {
-    background-color: transparent;
+.icon-button {
+    background: none;
     border: none;
-    color: var(--text-color);
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
+    color: #ffffff;
+    z-index: 1100; /* Кнопка над панелью */
 }
 
+.icon-button:hover {
+    color: #888888;
+}
+
+/* Боковое меню (справа) */
 .side-menu {
     position: fixed;
-    left: -250px;
     top: 0;
+    right: -100%; /* Полностью скрываем меню за правым краем экрана */
     width: 250px;
     height: 100%;
-    background-color: var(--bg-color);
-    transition: left 0.3s ease;
+    background-color: #1c1c1e;
+    transition: right 0.3s ease; /* Плавное выдвижение */
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: 1001;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5); /* Добавляем тень */
 }
 
-.side-menu nav ul {
-    list-style-type: none;
+.side-menu ul {
+    list-style: none;
     padding: 0;
 }
 
-.side-menu nav ul li {
+.side-menu ul li {
     margin: 20px 0;
 }
 
-.side-menu nav ul li a {
-    color: var(--text-color);
+.side-menu ul li a {
     text-decoration: none;
+    color: #ffffff;
     font-size: 18px;
 }
 
-/* Затемняющий фон */
+/* Затемнение */
 .overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 1;
+    z-index: 1000;
 }
 
-/* Показываем меню и затемнение при открытии */
+/* Открытие бокового меню справа */
 .side-menu.active {
-    left: 0;
+    right: 0;
 }
 
 .overlay.active {
     display: block;
 }
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .side-menu {
+        width: 200px; /* Уменьшаем ширину меню для мобильных */
+        right: -100%; /* Полностью скрываем меню за правым краем экрана */
+    }
+
+    .side-menu.active {
+        right: 0; /* Меню открывается */
+    }
+
+    .icon-button {
+        font-size: 18px;
+    }
+
+    main {
+        width: 95%;
+    }
+}
+
+.article {
+    max-width: 800px; /* Максимальная ширина контейнера для текста */
+    margin: 20px auto; /* Центрируем контейнер по горизонтали с отступами сверху и снизу */
+    padding: 20px; /* Отступы внутри контейнера */
+}
+
+h1, h2, p {
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+h1 {
+    font-size: 2em; /* Размер заголовка H1 */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+h2 {
+    font-size: 1.5em; /* Размер заголовка H2 */
+    margin-bottom: 8px; /* Отступ снизу */
+}
+
+p {
+    font-size: 1em; /* Размер текста параграфа */
+    line-height: 1.6; /* Высота строки для лучшей читаемости */
+    color: #c7c7c7; /* Цвет текста */
+    max-width: 600px; /* Максимальная ширина для текста параграфа */
+    margin-bottom: 15px; /* Отступ снизу для параграфа */
+}
+
 
