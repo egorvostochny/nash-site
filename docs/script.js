@@ -44,3 +44,27 @@ themeToggle.addEventListener('click', () => {
         themeToggle.textContent = '🌙'; // Иконка луны для ночной темы
     }
 });
+
+// Переключение темы
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    themeToggle.textContent = body.classList.contains('dark') ? '🌞' : '🌙';
+});
+
+// Открытие/закрытие меню
+const menuToggle = document.getElementById('menu-toggle');
+const sideMenu = document.getElementById('side-menu');
+const overlay = document.getElementById('overlay');
+
+menuToggle.addEventListener('click', () => {
+    sideMenu.classList.add('active');
+    overlay.classList.add('active');
+});
+
+overlay.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+});
