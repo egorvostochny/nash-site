@@ -86,3 +86,40 @@ footer {
     float: right;
     font-size: 20px;
 }
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    width: 45%;
+    margin: 10px;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.project p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#services {
+    background-color: #eef2f7;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#services li {
+    padding: 5px 0;
+}
