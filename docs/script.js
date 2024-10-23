@@ -20,3 +20,15 @@ window.addEventListener('click', (e) => {
         modal.style.display = 'none';
     }
 });
+
+// Получаем все якорные ссылки
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Отменяем стандартное поведение ссылки
+
+        // Плавно прокручиваем к элементу, на который ссылается якорь
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
