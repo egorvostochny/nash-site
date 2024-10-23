@@ -29,3 +29,18 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
         });
     });
 });
+
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    // Переключаем класс dark на элементе body
+    body.classList.toggle('dark');
+
+    // Меняем иконку кнопки
+    if (body.classList.contains('dark')) {
+        themeToggle.textContent = '🌞'; // Иконка солнца для дневной темы
+    } else {
+        themeToggle.textContent = '🌙'; // Иконка луны для ночной темы
+    }
+});
