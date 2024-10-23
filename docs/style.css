@@ -5,9 +5,8 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
 }
 
 nav ul {
@@ -125,7 +124,15 @@ footer {
 }
 
 body {
-    background: linear-gradient(to bottom right, #f0f0f0, #d9d9d9);
-    color: #333;
+    background-color: #000;
+    color: #fff;
     font-family: Arial, sans-serif;
+}
+
+a {
+    color: #007aff:
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
