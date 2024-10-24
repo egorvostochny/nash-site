@@ -157,4 +157,53 @@ p {
     margin-bottom: 15px; /* Отступ снизу для параграфа */
 }
 
+.carousel {
+    position: relative;
+    width: 319px; /* Ширина карусели */
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px; /* Отступ снизу от хэдера */
+}
 
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 300px; /* Ширина карточки */
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #333; /* Цвет фона карточки */
+    color: white; /* Цвет текста */
+    border-radius: 20px; /* Закругление углов */
+    height: 300px; /* Высота карточки */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирование контента по вертикали */
+    margin: 0 10px; /* Добавляем отступы по бокам для расстояния */
+}
+
+/* Стиль для кнопок */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Убираем фон */
+    border: none; /* Убираем границу */
+    color: white; /* Цвет текста */
+    font-size: 24px; /* Размер текста кнопки */
+    cursor: pointer;
+    z-index: 10; /* Убедитесь, что кнопки находятся над карточками */
+    width: 50px; /* Установите ширину для кнопок */
+    height: 50px; /* Установите высоту для кнопок */
+}
+
+/* Позиционирование кнопок */
+.left {
+    left: -10px; /* Расположение кнопки влево за пределами карусели */
+}
+
+.right {
+    right: -10px; /* Расположение кнопки вправо за пределами карусели */
+}
