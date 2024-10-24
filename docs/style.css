@@ -159,7 +159,7 @@ p {
 
 .carousel {
     position: relative;
-    width: 100%; /* Ширина карусели */
+    width: 21%; /* Ширина карусели */
     overflow: hidden;
     margin: auto;
     margin-top: 50px; /* Отступ снизу от хэдера */
