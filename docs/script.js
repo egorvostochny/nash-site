@@ -32,3 +32,34 @@ document.addEventListener("DOMContentLoaded", function() {
         // Здесь можно добавить функциональность поиска по сайту
     });
 });
+
+let currentSlide = 0;
+
+let currentIndex = 0; // Индекс текущей карточки
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+
+// Кнопки
+const prevButton = document.querySelector('.left');
+const nextButton = document.querySelector('.right');
+
+// Функция обновления карусели
+function updateCarousel() {
+    const itemWidth = items[0].offsetWidth + 20; // Ширина карточки плюс отступы
+    const newTransformValue = -currentIndex * itemWidth; // Обновляем значение трансформации
+    document.querySelector('.carousel-inner').style.transform = `translateX(${newTransformValue}px)`;
+}
+
+// Обработчики событий для кнопок
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
+    updateCarousel();
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
+    updateCarousel();
+});
+
+// Инициализация
+updateCarousel();
